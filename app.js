@@ -13,7 +13,7 @@ var app = express();
 
 const cors = require('cors');
 app.use(cors({
-    origin: 'http://localhost:5500',
+    origin: 'http://localhost:5500/frontend',
 }));
 
 app.use(logger('dev'));
