@@ -12,7 +12,9 @@ var bookingsRouter = require('./routes/bookings');
 var app = express();
 
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5500',
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
