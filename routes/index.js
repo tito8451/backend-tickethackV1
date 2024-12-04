@@ -23,7 +23,7 @@ router.get('/search/:departure/:arrival/:date', async (req, res) => {
     // console.log(`Departure query: ${new RegExp(departure.trim(), 'i')}`);
     // console.log(`Arrival query: ${new RegExp(arrival.trim(), 'i')}`);
     // console.log(`Date range: ${moment(date).startOf('day')} - ${moment(date).endOf('day')}`);
-    console.log(`Found trips:`, trips);
+    // console.log(`Found trips:`, trips);
 
     if (trips.length > 0) {
       res.json({ result: true, trips });

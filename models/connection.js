@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 mongoose.set('strictQuery', true)
 require('dotenv').config();
 const Trip = require('./trips');
-console.log('MongoDB URI:', process.env.MONGODB_URI); 
+
 // Connexion à MongoDB
 const connectionString = process.env.MONGODB_URI; 
 // console.log(connectionString);
@@ -40,3 +40,19 @@ mongoose.connect(connectionString)
   .catch(error => {
     console.error('Database connection error:', error);
   });
+// const mongoose = require('mongoose');
+// require('dotenv').config(); // Charger les variables d'environnement
+
+// const connectionString = process.env.MONGODB_URI; // URI de connexion à MongoDB
+
+// const connectDB = async () => {
+//   try {
+//     await mongoose.connect(connectionString);
+//     console.log('Database connected');
+//   } catch (error) {
+//     console.error('Database connection error:', error);
+//     process.exit(1); // Terminer le processus en cas d'erreur de connexion
+//   }
+// };
+
+// module.exports = connectDB; // Exporter la fonction de connexion
