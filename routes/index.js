@@ -18,7 +18,7 @@ router.get('/search/:departure/:arrival/:date', async (req, res) => {
       departure: new RegExp(departure.trim(), 'i'),
       arrival: new RegExp(arrival.trim(), 'i'),
       date: { $gte: moment(date).startOf('day'), $lte: moment(date).endOf('day') },
-    }).populate('trip');
+    });
     // console.log(`Searching for trips from ${departure.trim()} to ${arrival.trim()} on ${date}`);
     // console.log(`Departure query: ${new RegExp(departure.trim(), 'i')}`);
     // console.log(`Arrival query: ${new RegExp(arrival.trim(), 'i')}`);

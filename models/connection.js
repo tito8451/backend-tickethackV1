@@ -5,7 +5,7 @@ require('dotenv').config();
 const Trip = require('./trips');
 
 // Connexion à MongoDB
-const connectionString = process.env.MONGODB_URI; 
+const connectionString = process.env.CONNECTION_STRING; 
 // console.log(connectionString);
 mongoose.connect(connectionString)
   .then(() => {
@@ -40,19 +40,20 @@ mongoose.connect(connectionString)
   .catch(error => {
     console.error('Database connection error:', error);
   });
+// require('dotenv').config(); // Chargez les variables d'environnement
+
 // const mongoose = require('mongoose');
-// require('dotenv').config(); // Charger les variables d'environnement
+// mongoose.set('strictQuery', true);
+// const connectionString = process.env.CONNECTION_STRING;
 
-// const connectionString = process.env.MONGODB_URI; // URI de connexion à MongoDB
+// // console.log('Connection string:', connectionString); // Vérifiez que ça ne soit pas undefined
 
-// const connectDB = async () => {
-//   try {
-//     await mongoose.connect(connectionString);
-//     console.log('Database connected');
-//   } catch (error) {
-//     console.error('Database connection error:', error);
-//     process.exit(1); // Terminer le processus en cas d'erreur de connexion
-//   }
-// };
+// if (!connectionString) {
+//     console.error('Connection string is undefined. Check your environment variables.');
+//     process.exit(1); // Arrêtez le serveur si la chaîne est manquante
+// }
 
-// module.exports = connectDB; // Exporter la fonction de connexion
+// mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true, connectTimeoutMS: 2000 })
+//     .then(() => console.log('Database connected'))
+//     .catch(error => console.error('Database connection error:', error));
+
