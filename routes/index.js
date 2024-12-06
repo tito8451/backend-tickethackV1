@@ -26,9 +26,9 @@ router.get('/search/:departure/:arrival/:date', async (req, res) => {
     // console.log(`Found trips:`, trips);
 
     if (trips.length > 0) {
-      res.json({ result: true, trips });
+      res.status(200).json({ result: true, trips });
     } else {
-      res.json({ result: false });
+      res.status(404).json({ result: false });
     }
   } catch (err) {
     console.error('Error searching trips:', err);
