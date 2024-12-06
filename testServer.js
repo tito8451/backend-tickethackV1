@@ -13,7 +13,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config(); // Chargez les variables d'environnement
 
-const connectionString = process.env.MONGODB_URI;
+const connectionString = process.env.CONNECTION_STRING;
 
 mongoose.connect(connectionString)
   .then(() => {
