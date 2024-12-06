@@ -31,6 +31,7 @@ router.get('/search/:departure/:arrival/:date', async (req, res) => {
       res.status(404).json({ result: false });
     }
   } catch (err) {
+    console.error('Error fetching trips:', err);
     console.error('Error searching trips:', err);
     res.status(500).json({ result: false, error: 'Error searching trips' });
   }
